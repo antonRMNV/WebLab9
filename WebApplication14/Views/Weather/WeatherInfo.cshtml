@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Weather forecast";
+}
+@model string
+@addTagHelper *, WebApplication14
+<html>
+<head>
+    <title>
+        @ViewData["Title"]
+    </title>
+</head>
+<body>
+    <div class="text-center">
+        <vc:weather-info city="@Model"></vc:weather-info>
+    </div>
+</body>
+</html>

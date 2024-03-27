@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Products as table";
+}
+@model IEnumerable<Product>
+@addTagHelper *, WebApplication14
+<html>
+<head>
+    <title>
+        @ViewData["Title"]
+    </title>
+</head>
+<body>
+    <div class="text-center">
+        <h2 class="display-3">
+            List of Products
+        </h2>
+        <vc:show-table products="Model.ToList()"></vc:show-table>
+        <p style="font-size: 20px"><a href="/Home/Index"></a></p>
+    </div>
+</body>
+</html>

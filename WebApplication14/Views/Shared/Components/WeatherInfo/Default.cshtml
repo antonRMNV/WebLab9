@@ -1,0 +1,54 @@
+﻿@model WeatherData
+@{
+    string imageUrl = $"http://openweathermap.org/img/w/{Model.Weather.First().Icon}.png";
+}
+<style>
+    label {
+        font-size: 20px;
+    }
+</style>
+<div class="text-center">
+    <h2 class="display-5">
+        Weather in @Model.Name
+    </h2>
+    <div>
+        <img src="@imageUrl" width="50" height="50" />
+        <label style="font-size: 40px; color: blue"><b> @Convert.ToInt32(Model.Main.Temp)℃</b></label>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label style="font-size: 30px">Weather: @Model.Weather.First().Main</label>
+        </div>
+        <div class="col">
+            <label style="font-size: 30px">Condition: @Model.Weather.First().Description</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Temperature: @Model.Main.Temp℃</label>
+        </div>
+        <div class="col">
+            <label>Feels like: @Model.Main.FeelsLike℃</label>
+        </div>
+        <div class="col">
+            <label>Minimum: @Model.Main.TempMin℃</label>
+        </div>
+        <div class="col">
+            <label>Maximum: @Model.Main.TempMax℃</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Wind speed: @Model.Wind.Speed m/s</label>
+        </div>
+        <div class="col">
+            <label>Gusts: @Model.Wind.Gust m/s</label>
+        </div>
+        <div class="col">
+            <label>Pressure: @Model.Main.Pressure hPa</label>
+        </div>
+        <div class="col">
+            <label>Humidity: @Model.Main.Humidity%</label>
+        </div>
+    </div>
+</div>
